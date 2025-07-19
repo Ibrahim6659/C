@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Déconnexion | Burkina Connect Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .logout-box {
+      max-width: 400px;
+      margin: 10% auto;
+      padding: 2rem;
+      background: white;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .logout-box h1 {
+      color: #0284c7;
+    }
+
+    .logout-box p {
+      margin: 1rem 0;
+    }
+
+    .logout-box a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #0284c7;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .logout-box a:hover {
+      background-color: #0369a1;
+    }
+  </style>
+</head>
+<body>
+  <div class="logout-box">
+    <h1>Vous êtes déconnecté</h1>
+    <p>Merci d'avoir utilisé Burkina Connect Hub.</p>
+    <p>Redirection vers la page de connexion dans 5 secondes...</p>
+    <a href="login.html">Retourner à la connexion maintenant</a>
+  </div>
+
+  <script>
+    // Nettoyage du stockage local/session (auth) + redirection
+    localStorage.removeItem("authToken");
+    sessionStorage.clear();
+
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 5000);
+  </script>
+</body>
+</html>
